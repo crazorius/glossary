@@ -1,0 +1,27 @@
+<h1>Listing glosentries</h1>
+
+<table>
+  <tr>
+    <th>Keyword</th>
+    <th>Explanation</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @glosentries.each do |glosentry| %>
+  <tr>
+    <td><%= glosentry.keyword %></td>
+    <td><%= glosentry.short_explanation %></td>
+    <td><%= glosentry.user_id %></td>
+    <td><%= link_to 'Show', glosentry %></td>
+    <td><%= link_to 'Edit', edit_glosentry_path(glosentry) %></td>
+    <td><%= link_to 'Destroy', glosentry, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Glosentry', new_glosentry_path %>

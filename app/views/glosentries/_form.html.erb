@@ -1,0 +1,25 @@
+<%= form_for(@glosentry) do |f| %>
+  <% if @glosentry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@glosentry.errors.count, "error") %> prohibited this glosentry from being saved:</h2>
+
+      <ul>
+      <% @glosentry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :keyword %><br />
+    <%= f.text_field :keyword %>
+  </div>
+  <div class="field">
+    <%= f.label :explanation %><br />
+    <%= f.text_area :explanation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
